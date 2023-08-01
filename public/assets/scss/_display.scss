@@ -1,0 +1,67 @@
+/* display helpers */
+$display-values: block, inline-block, flex, inline-flex, none;
+
+$medias: (
+  "xs": "360px",
+  "sm": "576px",
+  "md": "768px",
+  "lg": "992px",
+  "xl": "1200px",
+);
+
+@each $value in $display-values {
+  .d-#{$value} {
+    display: #{$value}!important;
+  }
+}
+
+@each $media, $size in $medias {
+  @each $value in $display-values {
+    @media screen and (min-width: $size) {
+      .d-#{$media}-#{$value} {
+        display: #{$value}!important;
+      }
+    }
+  }
+}
+
+.overflow-y-auto {
+  overflow-y: auto!important;
+  scroll-behavior: smooth;
+}
+
+.overflow-x-auto {
+  overflow-x: auto!important;
+  scroll-behavior: smooth;
+}
+
+.overflow-auto {
+  overflow: auto!important;
+  scroll-behavior: smooth;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden!important;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden!important;
+}
+
+.overflow-y-overlay {
+  overflow-y: overlay!important;
+}
+
+.overflow-x-overlay {
+  overflow-x: overlay!important;
+}
+
+.overflow-hidden {
+  overflow: hidden!important;
+}
+
+.overflow-overlay {
+  overflow: overlay!important;
+}
+
+/* endof display helpers */

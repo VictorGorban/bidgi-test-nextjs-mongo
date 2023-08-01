@@ -1,0 +1,281 @@
+form {
+  position: relative;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+.form {
+  position: relative;
+  width: 100%;
+}
+
+.form .label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray3);
+  margin-bottom: 7px;
+}
+
+.form .btn {
+  width: 100%;
+  position: relative;
+}
+
+.form .btn:hover {
+  box-shadow: 0 7px 10px rgb(0 0 0 / 20%);
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.form .input-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  &.with-icon {
+    .icon {
+      position: absolute;
+      width: 23px;
+      height: 23px;
+      left: 20px; // top не указываю, за это отвечает flex-модель
+    }
+
+    .form-control {
+      padding-left: 60px;
+    }
+  }
+}
+
+.form .input-wrapper > .text-badge {
+  font-weight: 600;
+  top: calc(50% - 9px);
+  right: 20px;
+  padding: 1px 9px;
+  cursor: pointer;
+}
+
+.form .input-wrapper > .text-badge.bg-brand.show-password.password-new,
+.form .input-wrapper > .text-badge.bg-brand.hide-password.password-new {
+  font-weight: 600;
+  top: calc(50% + 2px);
+  right: 20px;
+  padding: 1px 9px;
+  cursor: pointer;
+}
+
+.form .input-wrapper > input {
+  width: 100%;
+}
+
+.form .input-wrapper > input[type="password"] ~ .hide-password {
+  display: none;
+}
+
+.form .input-wrapper > input[type="password"] ~ .show-password {
+  display: block;
+}
+
+.form .input-wrapper > input[type="text"] ~ .hide-password {
+  display: block;
+}
+
+.form .input-wrapper > input[type="text"] ~ .show-password {
+  display: none;
+}
+
+.form .form-group.error .input-wrapper > .text-badge,
+.form .form-group.done .input-wrapper > .text-badge {
+  right: 35px;
+}
+
+.form .form-group.error .input-wrapper > input,
+.form .form-group.done .input-wrapper > input {
+  padding-right: 50px; // для иконки ошибки или успеха
+}
+
+.form .form-group.error .input-wrapper > .text-badge {
+  background: var(--red);
+}
+
+.form .form-group.error .input-wrapper > input {
+  border-color: var(--red);
+}
+
+.form .form-group.error .input-wrapper::after {
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 9px);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--red);
+  content: "!";
+}
+
+.form .form-group.done .input-wrapper::after {
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 9px);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--gray3);
+  content: "\2713";
+}
+
+.form .form-control {
+  font-size: 14px;
+  position: relative;
+  height: 35px;
+  box-shadow: 0 1px 0 #fff, 0 -2px 5px rgb(0 0 0 / 12%) inset;
+  border-radius: 5px;
+  border: 1px solid var(--gray3);
+  padding-left: 10px;
+  padding-right: 10px;
+
+  &::placeholder {
+    color: gray;
+    opacity: 0.5;
+  }
+
+  &:hover,
+  &:focus {
+    // border: 1px solid var(--gray3);
+    box-shadow: none;
+    &:disabled {
+      border: 1px solid rgba(108, 117, 125, 0.5);
+    }
+  }
+}
+
+.form .form-control.textarea {
+  height: 100px;
+  width: 100%;
+  padding-top: 10px;
+
+  // яндекс херней страдает, сегодня он добавил жирную черную обводку на :focus-visible
+  &:focus-visible{
+    outline: none;
+  }
+}
+
+.form input[type="checkbox"] {
+  /* border: 2px solid #7876f2; */
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-bottom: -5px;
+  position: absolute;
+}
+
+.form .form-group > .field-error {
+  display: none;
+  color: var(--red);
+}
+
+.form .form-group > .field-notification {
+  display: none;
+  color: var(--warning);
+}
+
+.form .form-group.error > .field-error {
+  display: block;
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 5px;
+}
+
+.form .form-group.notification > .field-notification {
+  display: block;
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 10px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+}
+
+.form .react-select__control {
+  min-height: 35px;
+  border: 1px solid rgba(108, 117, 125, 0.5);
+  transition-duration: 0.15s;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.form .react-select__control:hover {
+  border: 1px solid var(--gray3);
+}
+
+.form .react-select__control--is-focused {
+  border: 1px solid var(--gray3);
+  box-shadow: none;
+}
+
+.table-select .react-select__control {
+  height: 35px;
+  border: 1px solid rgba(108, 117, 125, 0.5);
+  transition-duration: 0.15s;
+  border-radius: 6px;
+}
+
+.table-select .react-select__control:hover {
+  height: 35px;
+  border: 1px solid var(--gray3);
+}
+
+.table-select .react-select__control--is-focused {
+  border: 1px solid var(--gray3);
+  box-shadow: none;
+}
+
+.search {
+  width: 100%;
+}
+
+.input-search {
+  width: 100%;
+  border: none;
+  padding-right: 15px;
+  position: relative;
+  padding-left: 30px;
+}
+.input-search:focus {
+  outline: none;
+}
+
+.input-search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.search .btn .search-icon {
+  position: absolute;
+  left: 16px;
+  top: 13px;
+  width: 20px;
+  height: 20px;
+}

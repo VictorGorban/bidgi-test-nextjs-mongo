@@ -1,0 +1,32 @@
+@import 'reboot';
+@import 'roboto';
+@import 'exo2';
+@import 'common';
+@import 'buttons_and_links';
+@import 'tables';
+@import 'navbar';
+@import 'footer';
+@import 'loaders';
+@import 'modals';
+@import 'widgets';
+@import 'images';
+
+@import 'notifications';
+@import 'tippy';
+@import 'nprogress';
+
+// Описание страниц должно быть до шаблонных. Иначе дефолтные стили страницы будут переписывать шаблонные. И, например, form-group mb-15 не будет работаеть.
+@import 'forms';
+@import 'lists';
+
+@import 'colors';
+@import 'date_range';
+@import 'container';
+@import 'width_utilities';
+@import 'margins_paddings';
+@import 'text';
+@import 'borders';
+@import 'display';
+@import 'positions';
+@import 'flex';
+

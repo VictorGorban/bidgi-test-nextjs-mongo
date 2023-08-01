@@ -1,0 +1,91 @@
+$font-sizes: 10, 11, 12, 14, 15, 16, 18, 19, 20, 21, 24, 26, 28, 30, 32, 34, 36, 38, 46, 48;
+$font-weights: 100, 200, 300, 400, 500, 600, 700, 800;
+$text-aligns: left, right, center, justify;
+$text-transforms: uppercase, lowercase, capitalize, none;
+$text-decorations: underline, blink, overline, dotted;
+
+$medias: (
+  "xs": "360px",
+  "sm": "576px",
+  "md": "768px",
+  "lg": "992px",
+  "xl": "1200px",
+);
+
+//weight
+@each $value in $font-weights {
+  .weight-#{$value} {
+    font-weight: $value !important;
+  }
+}
+// size
+@each $value in $font-sizes {
+  .size-#{$value} {
+    font-size: $value + 0px !important;
+  }
+}
+// align
+@each $value in $text-aligns {
+  .align-#{$value} {
+    text-align: $value !important;
+  }
+}
+// transform
+@each $value in $text-transforms {
+  .transform-#{$value} {
+    text-transform: $value !important;
+  }
+}
+// decoration
+@each $value in $text-decorations {
+  .decoration-#{$value} {
+    text-decoration: $value !important;
+  }
+}
+
+@each $media, $value in $medias {
+  @media screen and (min-width: $value) {
+    //weight
+    @each $value in $font-weights {
+      .weight-#{$media}-#{$value} {
+        font-weight: $value !important;
+      }
+    }
+    // size
+    @each $value in $font-sizes {
+      .size-#{$media}-#{$value} {
+        font-size: $value + 0px !important;
+      }
+    }
+    // align
+    @each $value in $text-aligns {
+      .align-#{$media}-#{$value} {
+        text-align: $value !important;
+      }
+    }
+    // transform
+    @each $value in $text-transforms {
+      .transform-#{$media}-#{$value} {
+        text-transform: $value !important;
+      }
+    }
+    // decoration
+    @each $value in $text-decorations {
+      .decoration-#{$media}-#{$value} {
+        text-decoration: $value !important;
+      }
+    }
+  }
+}
+
+.text-badge {
+  position: absolute;
+  top: -10px;
+  right: -40px;
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 700;
+  color: var(--white);
+  border-radius: 50px;
+  padding: 0 5px;
+}

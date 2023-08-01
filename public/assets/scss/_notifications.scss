@@ -1,0 +1,35 @@
+.Toastify {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  .Toastify__toast-container {
+    width: 350px;
+  }
+  .Toastify__toast {
+    border: none;
+    padding: 0 15px;
+  }
+  
+  .Toastify__toast.Toastify__toast--error{
+      box-shadow: 0px 4px 30px rgba(235, 75, 77, 0.5);
+      background: var(--red);
+  }
+  
+  .Toastify__toast.Toastify__toast--success{
+      box-shadow: 0px 4px 51px rgba(25, 159, 132, 0.5);
+      background: var(--green);
+  }
+
+  .Toastify__toast.Toastify__toast--warning{
+    box-shadow: 0px 4px 30px rgba(255, 210, 51, 0.5);
+    background: var(--yellow);
+    color: var(--gray1)
+}
+  
+  /** Used to position the icon **/
+  .Toastify__toast-icon {
+    width: 30px;
+    height: 30px;
+  }
+  

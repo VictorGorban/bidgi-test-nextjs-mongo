@@ -1,0 +1,133 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  
+  // по насыщенности цвета, по убыванию:
+  --brand1: #2A3F54;
+  --brand2: #1e947b;
+  --brand3: #26B99A;
+  
+  --gray1: #2A3F54;
+  --gray2: #666666;
+  --gray3: #6b8096;
+  --gray4: #E6E6E6;
+  --gray5: #f7f7f7;
+
+  --green: #26B99A;
+  --red: #FF1414;
+  --red2: #EB5757;
+  --yellow: #ffd172;
+  --blue: blue;
+}
+
+//* Раскомментить если нужно кастомизировать скроллбар
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 15px;
+//   height: 15px;
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   background: var(--gray3);
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: gray;
+//   border-radius: 10px;
+// }
+
+// // /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: var(--gray2);
+// }
+
+* {
+  transition: all 0.15s ease-out;
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: none;
+  font-family: Roboto, serif;
+  font-size: 13px;
+  line-height: 1.2;
+  padding-left: 30px;
+  &.sidebar-open{
+    // overflow-y: hidden;
+    padding-left: 280px;
+  }
+  &.ReactModal__Body--open{
+    // overflow-y: hidden;
+    // padding-right: 15px;
+  }
+}
+
+/* .btn:hover {
+  box-shadow: 0 8px 10px rgb(0 0 0 / 20%);
+} */
+
+b{
+  font-weight: 700;
+  color: var(--brand0);
+}
+
+ul {
+  list-style-type: none;
+}
+
+input {
+  outline: none;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+.embed {
+  height: 100%;
+}
+
+.hover-pointer:hover {
+  cursor: pointer;
+}
+
+
+
+[disabled] {
+  pointer-events: none;
+  opacity: 0.65 !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 0px;
+  height: 0px;
+  margin: 0px;
+}
+
+.breadcrumb-item {
+  color: var(--dark);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.breadcrumb-item.active, .breadcrumb-item:hover {
+  color: var(--brand);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "";
+}
+
+.breakcrumb-item-divider {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: -2px;
+}
+
+.font-exo2{
+  font-family: Exo2, serif;
+}

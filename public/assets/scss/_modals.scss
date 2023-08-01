@@ -1,0 +1,76 @@
+.modal-overlay-base {
+  padding: 1rem;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  transition-property: background-color, opacity;
+  transition-duration: 250ms;
+  transition-timing-function: linear;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay-after {
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}
+
+.modal-overlay-before {
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+}
+
+.modal-content-base {
+  position: relative;
+  /*
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    */
+  margin: 0 auto;
+  border: 0;
+  outline: 0;
+  display: block;
+  height: fit-content;
+  min-height: 150px;
+  min-width: 350px;
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 80%;
+  background: var(--white);
+  box-shadow: 0 0 25px rgb(0 0 0 / 40%);
+  border-radius: 12px;
+}
+
+.modal-content-base .footer .btn {
+  min-width: 135px;
+}
+
+.modal-content-after {
+}
+
+.modal-content-before {
+}
+
+.modal-heading {
+  font-family: Exo2;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--gray1);
+}
+
+@media screen and (min-width: 992px) {
+  .modal-heading {
+    font-size: 24px;
+    text-align: center;
+  }
+}

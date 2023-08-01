@@ -1,0 +1,149 @@
+.link {
+  color: inherit;
+  display: inline-block;
+  text-decoration: node;
+}
+
+.link:hover {
+  text-decoration: underline;
+  // color: var(--brand1);
+  cursor: pointer;
+}
+
+.link.style-1 {
+  color: var(--gray1);
+  &.active, &:hover {
+    color: var(--brand1);
+  }
+}
+
+.link.style-2 {
+  color: var(--brand0);
+  &.active, &:hover {
+    color: var(--brand2);
+  }
+}
+
+.link.disabled:hover,
+.disabled > .link:hover {
+  text-decoration: none;
+  color: inherit;
+  cursor: not-allowed;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  padding: 5px 10px;
+  border-radius: 3px;
+
+  &.active, &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn.modal-close-btn {
+  position: absolute;
+  background: var(--brand5);
+  padding: 7px;
+  top: -12px;
+  right: -12px;
+  border-radius: 50px;
+
+  & > img {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.btn.style-1 {
+  color: var(--gray1);
+  background: var(--white);
+  border: 1px solid var(--gray2);
+  border-radius: 5px;
+  height: 35px;
+  // text-transform: uppercase;
+
+  &.active, &:hover {
+    color: var(--gray1);
+    background: var(--gray4);
+  }
+
+  &:focus {
+    color: var(--gray1);
+    background: var(--gray4);
+  }
+}
+
+.btn.style-2 {
+  color: var(--white);
+  background: var(--brand2);
+  border: 1px solid var(--gray2);
+  border-radius: 5px;
+  height: 35px;
+  // text-transform: uppercase;
+
+  &.active, &:hover {
+  color: var(--gray1);
+  background: var(--brand4);
+  }
+
+  &:focus {
+  color: var(--gray1);
+  background: var(--brand4);
+  }
+}
+
+.btn.style-3 {
+  color: var(--white);
+  background: var(--red);
+  border: 1px solid var(--gray2);
+  border-radius: 5px;
+  height: 35px;
+  // text-transform: uppercase;
+
+  &.active, &:hover {
+    color: var(--gray1);
+    background: var(--brand4);
+  }
+
+  &:focus {
+    color: var(--gray1);
+    background: var(--brand4);
+  }
+}
+
+.btn.style-pagination {
+  color: var(--white);
+  background: var(--brand3);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  font-family: Exo2;
+  font-weight: 700;
+  font-size: 18px;
+  width: 45px;
+  height: 45px;
+
+  &.active {
+    background: var(--gray2);
+
+    &.active, &:hover {
+      cursor: default;
+    }
+  }
+
+  &:hover:not(.active) {
+    background: var(--brand1);
+  }
+}

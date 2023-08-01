@@ -1,0 +1,20 @@
+$listTypes: none, disc, square, circle, decimal, decimal-leading-zero;
+
+@each $type in $listTypes {
+  .list-style-#{$type} {
+    list-style-type: $type;
+  }
+}
+
+.list-style2{
+  overflow-x: hidden;
+  padding-left: 0;
+
+  .list-item{
+    margin-left: 0;
+
+    &:hover{
+      margin-left: 10px;
+    }
+  }
+}

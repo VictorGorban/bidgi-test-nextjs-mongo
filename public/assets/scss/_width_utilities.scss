@@ -1,0 +1,79 @@
+/* Width utilities */
+$values: (
+  "10": "10%",
+  "25": "25%",
+  "33": "33.3333333333% ",
+  "50": "50%",
+  "66": "66.6666666667%",
+  "75": "75%",
+  "90": "90%",
+  "100": "100%",
+  "fit-content": "fit-content",
+);
+
+$properties: (
+  "w": "width",
+  "h": "height",
+);
+
+$medias: (
+  "xs": "360px",
+  "sm": "576px",
+  "md": "768px",
+  "lg": "992px",
+  "xl": "1200px",
+);
+
+@each $name, $glyph in $properties {
+  @each $key, $value in $values {
+    .w-#{$key} {
+      width: #{$value} !important;
+    }
+  }
+}
+
+@each $media, $size in $medias {
+  @each $name, $glyph in $properties {
+    @each $key, $value in $values {
+      @media screen and (min-width: $size) {
+        .w-#{$media}-#{$key} {
+          width: #{$value} !important;
+        }
+        .w-#{$media}-fit-content {
+          width: fit-content !important;
+        }
+      }
+    }
+  }
+}
+
+/* endof Width utilities */
+
+/* Height utilities */
+
+@for $i from 1 through 9 {
+  .lh-#{$i} {
+    line-height: 0px + $i * 10 !important;
+  }
+}
+
+@for $i from 1 through 9 {
+  .h-#{$i} {
+    height: 0px + $i * 10 !important;
+  }
+}
+
+.h-max {
+  height: 100vh !important;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+// Имеется в виду весь экран кроме верхнего меню.
+.h-maxcontent {
+  height: calc(100vh - 100px) !important;
+}
+
+/* endof Height utilities */

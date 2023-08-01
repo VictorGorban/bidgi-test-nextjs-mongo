@@ -1,0 +1,218 @@
+.navbar {
+  padding: 0.5rem 1rem;
+}
+
+.navbar-toggler {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+@media only screen and (max-width: 650px) {
+  button.navbar-toggler {
+    padding-right: 0;
+  }
+}
+
+// .navbar-toggler-icon {
+//     width: 60px;
+//     height: 60px;
+//     background-image: url(/assets/img/icons/hamburger_menu.svg);
+// }
+
+.menu .nav-item a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.menu hr {
+  width: calc(100% - 20px * 2);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.top-menu-wrapper .menu {
+  .nav-item {
+    color: var(--gray5);
+    font-weight: 400;
+    font-size: 13px;
+    padding: 0 15px;
+    margin: 0 5px;
+    position: relative;
+    cursor: pointer;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &.dropdown::after {
+      content: "";
+      display: inline-block;
+      width: 0.5em;
+      height: 0.5em;
+      border-right: 0.1em solid var(--gray2);
+      border-top: 0.1em solid var(--gray2);
+      margin-left: 15px;
+      transform: rotate(135deg) translateY(3px);
+      opacity: 0.6;
+      transition: border-color 0.15s ease-out;
+    }
+
+    &.active,
+    &:hover {
+      // color: var(--brand1);
+      // text-decoration: underline;
+      // font-weight: 700;
+      &.dropdown::after {
+        border-color: var(--gray3);
+      }
+    }
+  }
+}
+
+.top-menu-wrapper .dropdown-menu {
+  .nav-item {
+    color: var(--gray1);
+    font-weight: 400;
+    font-size: 13px;
+    padding: 0;
+    margin: 5px 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+  }
+}
+
+.right-menu-wrapper {
+  height: 100vh;
+  min-height: 100vh;
+  position: fixed;
+  min-width: 250px;
+  width: 250px;
+  top: 0;
+  left: -250px;
+  z-index: 100;
+
+  .rightbar-toggler {
+    opacity: 0.7;
+    width: 30px;
+    &:hover {
+      background: var(--gray4);
+      opacity: 1;
+    }
+  }
+
+  .menu {
+    height: 100%;
+    overflow: auto;
+    width: 250px;
+    // margin-left: -250px;
+    margin-right: 0;
+    // forcing hardware acceleration to get rid of first-draw lag
+    transform: translateZ(0);
+    transition: all 0.35s ease-out;
+
+    .company-block{
+      .image.user-image{
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .Collapsible__contentInner {
+      margin-left: 15px; /* margin вместо padding - потому что нужно выставить border */
+      border-left: 1px solid var(--brand1);
+    }
+
+    .Collapsible__contentOuter {
+      // forcing hardware acceleration to get rid of first-draw lag
+      transform: translateZ(0);
+    }
+
+    hr {
+      width: calc(100% - 40px);
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .close-block {
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 20px;
+      cursor: pointer;
+
+      img {
+        height: 24px;
+        width: 24px;
+      }
+    }
+
+    .nav-item {
+      color: var(--gray5);
+      font-size: 13px;
+      margin-bottom: 5px;
+      padding: 15px 20px;
+      position: relative;
+      display: block;
+      cursor: pointer;
+
+      &.dropdown::after {
+        content: "";
+        display: inline-block;
+        width: 0.5em;
+        height: 0.5em;
+        border-right: 0.1em solid var(--gray2);
+        border-top: 0.1em solid var(--gray2);
+        margin-left: 15px;
+        transform: rotate(135deg) translateY(3px);
+        opacity: 0.6;
+        transition: border-color 0.15s ease-out;
+      }
+
+      &.active,
+      &:hover {
+        // color: var(--brand1);
+        text-decoration: underline;
+        border-right: 3px solid var(--brand2);
+        background: linear-gradient(#334556, #2c4257), #2a3f54;
+        box-shadow: rgb(0 0 0 / 25%) 0 1px 0,
+          inset rgb(255 255 255 / 16%) 0 1px 0;
+        // font-weight: 700;
+        &.dropdown::after {
+          border-color: var(--gray3);
+        }
+      }
+    }
+  }
+
+  &.open {
+    left: 0;
+    // pointer-events: all;
+    // .overlay {
+    //   transition: background 0.5s ease-out;
+    //   background: rgba(0, 0, 0, 0.5);
+    // }
+
+    // .menu {
+    //   transition: margin-left 0.35s ease-out;
+    //   margin-left: 0;
+    // }
+  }
+
+  &.closing {
+    .menu {
+      left: -250px;
+    }
+  }
+}

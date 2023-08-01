@@ -1,0 +1,148 @@
+/* all */
+$properties: (
+    'm': 'margin',
+    'p': 'padding'
+);
+
+$medias: (
+    'sm': '576px',
+    'md': '768px',
+    'lg': '992px',
+    'xl': '1200px'
+);
+
+//Если обычным списком то в цикле необходимо писать условию $value < 10 и в классе добавлять 0 перед $value
+$values: (
+    '0': 0px,
+    '05': 5px,
+    '08': 8px,
+    '10': 10px,
+    '15': 15px,
+    '20': 20px,
+    '25': 25px,
+    '30': 30px,
+    '40': 40px,
+    '50': 50px,
+    '60': 60px,
+    '80': 80px,
+    '100': 100px,
+    'auto': auto
+);
+
+@each $key, $value in $values {
+    @each $name, $glyph in $properties {
+        /* all */
+        .#{$name}-#{$key} {
+            #{$glyph}-left: $value;
+            #{$glyph}-right: $value;
+            #{$glyph}-top: $value;
+            #{$glyph}-bottom: $value;
+        }
+        /* endof all */
+
+        /* top+bottom */
+
+        .#{$name}y-#{$key} {
+            #{$glyph}-top: $value;
+            #{$glyph}-bottom: $value;
+        }
+        /* endof top+bottom */
+
+        /* left and right*/
+
+        .#{$name}x-#{$key} {
+            #{$glyph}-left: $value;
+            #{$glyph}-right: $value;
+        }
+        /* endof left and right*/
+
+        /* top */
+
+        .#{$name}t-#{$key} {
+            #{$glyph}-top: $value;
+        }
+        /* endof top */
+
+        /* bottom */
+
+        .#{$name}b-#{$key} {
+            #{$glyph}-bottom: $value;
+        }
+
+        /* endof bottom */
+
+        /* left */
+
+        .#{$name}l-#{$key} {
+            #{$glyph}-left: $value;
+        }
+        /* endof left */
+
+        /* right*/
+
+        .#{$name}r-#{$key} {
+            #{$glyph}-right: $value;
+        }
+    }
+}
+
+@each $name, $glyph in $properties {
+    @each $mediaKey, $mediaSize in $medias {
+        @each $key, $value in $values {
+            @media only screen and (min-width: $mediaSize) {
+                /* all */
+                .#{$name}-#{$mediaKey}-#{$key} {
+                    #{$glyph}-left: $value;
+                    #{$glyph}-right: $value;
+                    #{$glyph}-top: $value;
+                    #{$glyph}-bottom: $value;
+                }
+                /* endof all */
+
+                /* top+bottom */
+
+                .#{$name}y-#{$mediaKey}-#{$key} {
+                    #{$glyph}-top: $value;
+                    #{$glyph}-bottom: $value;
+                }
+                /* endof top+bottom */
+
+                /* left and right*/
+
+                .#{$name}x-#{$mediaKey}-#{$key} {
+                    #{$glyph}-left: $value;
+                    #{$glyph}-right: $value;
+                }
+                /* endof left and right*/
+
+                /* top */
+
+                .#{$name}t-#{$mediaKey}-#{$key} {
+                    #{$glyph}-top: $value;
+                }
+                /* endof top */
+
+                /* bottom */
+
+                .#{$name}b-#{$mediaKey}-#{$key} {
+                    #{$glyph}-bottom: $value;
+                }
+                /* endof bottom */
+
+                /* left */
+
+                .#{$name}l-#{$mediaKey}-#{$key} {
+                    #{$glyph}-left: $value;
+                }
+                /* endof left */
+
+                /* right*/
+
+                .#{$name}r-#{$mediaKey}-#{$key} {
+                    #{$glyph}-right: $value;
+                }
+                /* endof right*/
+            }
+        }
+    }
+}
