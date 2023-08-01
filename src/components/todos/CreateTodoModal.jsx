@@ -75,8 +75,8 @@ export default React.forwardRef(function Component({ newTodo, onCreateTodo }, el
     function getDefaultValues() {
         if (!newTodo) return {}
         return {
-            email: newTodo.email || user.email,
-            username: newTodo.username || user.username,
+            email: newTodo.email || user?.email,
+            username: newTodo.username || user?.username,
             description: newTodo.description,
         }
     }

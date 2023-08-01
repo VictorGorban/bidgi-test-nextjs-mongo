@@ -136,7 +136,22 @@ export default function Component({ }) {
                                     </div>
                                 </div>
                             </div>
-                            : null
+                            :
+                            <div className="company-block w-100 d-flex px-20 color-white">
+                                <div className="image user-image d-flex all-center">
+                                    <i className="fa fa-user size-30"></i>
+                                </div>
+                                <div className="links d-flex flex-column justify-content-center">
+                                    <div className="name mb-05"></div>
+                                    <div>
+                                        <Link href="/login">
+                                            <a className={`link ml-20`}>
+                                                <i className="fa fa-sign-in mr-05"></i>Войти
+                                            </a>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
                         }
                     </div>
 

@@ -49,7 +49,7 @@ async function handler(req, res) {
       $or: [{ username: data.login }, { email: data.login }],
     };
     let user = await Collections.users.findOne(findQuery);
-    if (!user) return apiResponses.error(res, "Пользователь не найден");
+    if (!user) return apiResponses.error(res, "Пользователь не найден. Войдите в систему.");
 
     if (!(await verifyPassword(data.password, user.password?.buffer)))
       return apiResponses.error(res, "Неверный пароль");

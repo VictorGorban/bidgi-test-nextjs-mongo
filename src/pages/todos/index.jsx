@@ -88,7 +88,6 @@ export async function getServerSideProps({ req, res }) {
 
   let pageSize = 3;
   let todos = await Collections.todos.find({
-    companyId: propUser.companyId
   }).sort({ createdAt: -1 }).limit(pageSize)
   // записей там уже десятки тысяч, так что без серверной пагинации не обойтись.
   pageData.pageSize = pageSize;

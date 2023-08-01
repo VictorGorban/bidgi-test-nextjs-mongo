@@ -53,7 +53,7 @@ async function handler(req, res) {
     dataSchema.validate(data, {});
 
     let user = await Collections.users.findOne({ _id: data.userId });
-    if (!user) return apiResponses.error(res, "Пользователь не найден");
+    if (!user) return apiResponses.error(res, "Пользователь не найден. Войдите в систему.");
 
     // сохранить в файл не получится, т.к. nodejs сервит файлы статически, а не динамически (новые файлы в проде не попадают в выдачу). В dev-е хостинг динамический, поэтому и работает.
 

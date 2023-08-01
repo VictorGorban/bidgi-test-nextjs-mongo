@@ -46,7 +46,7 @@ async function handler(req, res) {
     let user = await Collections.users.findOne({
       _id: userId,
     });
-    if (!user) throw new Error("Пользователь не найден");
+    if (!user) throw new Error("Пользователь не найден. Войдите в систему.");
 
     // глобальный админ может получать вообще всех. Глобального админа может получить только другой глобальный админ.
     if (

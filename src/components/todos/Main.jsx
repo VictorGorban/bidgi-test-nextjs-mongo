@@ -137,6 +137,8 @@ export default function Main() {
             }
 
             let updatedTodo = await clientHelpers.submitObject('/api/todo/update', { ...fieldsToSave, _id: selectedTodo._id })
+            selectedTodo.isEdited = updatedTodo.isEdited;
+            setSelectedTodo(_.clone(selectedTodo))
             await refreshTable();
 
             notifications.showSuccess('Задача обновлена')
@@ -148,7 +150,9 @@ export default function Main() {
     async function handleMarkCompleted() {
         try {
             await clientHelpers.submitObject('/api/todo/markCompleted', { todoId: selectedTodo._id })
-            await refreshTable();
+            refreshTable();
+            selectedTodo.isCompleted = true;
+            setSelectedTodo(_.clone(selectedTodo))
 
             notifications.showSuccess('Задача обновлена')
         } catch (e) {
@@ -195,10 +199,14 @@ export default function Main() {
         {
             render: (item, idx) =>
                 <td className="td name">
-                    <span className="link"
-                        onClick={e => handleSelectTodo(item)}>
-                        {item.username || 'Не указан'}
-                    </span>
+                    {user?.roles?.includes('admin') ?
+                        <span className="link"
+                            onClick={e => handleSelectTodo(item)}>
+                            {item.username || 'Не указан'}
+                        </span> :
+                        item.username || 'Не указан'
+                    }
+
                 </td>
         },
         {
